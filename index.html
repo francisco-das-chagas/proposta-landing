@@ -102,6 +102,12 @@ section{padding:6rem 2rem}
 .invest-price sup{font-size:1.8rem;color:var(--gold);vertical-align:super}
 .invest-label{font-size:.85rem;color:var(--muted);font-weight:300;margin-top:.5rem}
 .invest-pix{display:inline-block;margin-top:1rem;font-size:.8rem;color:var(--gold);border:1px solid var(--border);padding:5px 14px;border-radius:99px}
+.invest-split{display:flex;align-items:center;gap:1rem;margin-top:1.25rem;margin-bottom:.25rem}
+.invest-split-item{display:flex;flex-direction:column;gap:.2rem}
+.split-label{font-size:.72rem;color:var(--muted);font-weight:300;text-transform:uppercase;letter-spacing:.08em}
+.split-value{font-size:1.15rem;font-weight:600;color:var(--white)}
+.split-value em{font-style:normal;font-size:.75rem;color:var(--gold);font-weight:400;margin-left:.2rem}
+.invest-split-divider{font-size:1.4rem;color:var(--gold);font-weight:300;padding:0 .2rem}
 .invest-includes h4{font-size:.8rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
 .invest-note{font-size:.8rem;color:var(--muted);font-style:italic;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.06);font-weight:300;grid-column:1/-1;margin-top:.5rem}
 
@@ -147,9 +153,9 @@ footer strong{color:var(--gold);font-weight:500}
     <h1>Um site à altura<br>do seu <em>escritório.</em></h1>
     <p class="hero-sub">Landing page profissional com a identidade visual do Álvaro Alfredo Advogados — para ser encontrado, gerar confiança e converter visitantes em clientes.</p>
     <div class="hero-meta">
-      <div class="hero-price">R$&nbsp;1.200<span>pagamento único</span></div>
+      <div class="hero-price">R$&nbsp;1.200<span>50% início · 50% entrega</span></div>
       <div class="hero-divider"></div>
-      <div class="hero-note"><strong>Entrega em 5 dias</strong>Pix, transferência ou parcelado</div>
+      <div class="hero-note"><strong>Entrega em 5 dias</strong>Pix ou transferência</div>
     </div>
   </div>
   <div class="scroll-hint">ver proposta</div>
@@ -246,12 +252,23 @@ footer strong{color:var(--gold);font-weight:500}
 <section class="invest">
   <div class="container">
     <p class="section-label reveal">Investimento</p>
-    <h2 class="section-title reveal">Tudo isso por um<br>valor único.</h2>
+    <h2 class="section-title reveal">Tudo isso por R$1.200<br>em duas etapas simples.</h2>
     <div class="invest-box reveal">
       <div>
         <div class="invest-price"><sup>R$</sup>1.200</div>
-        <p class="invest-label">pagamento único · sem mensalidade</p>
-        <span class="invest-pix">Pix, transferência ou parcelado</span>
+        <p class="invest-label">total · sem mensalidade</p>
+        <div class="invest-split">
+          <div class="invest-split-item">
+            <span class="split-label">Para começar</span>
+            <span class="split-value">R$&nbsp;600 <em>50%</em></span>
+          </div>
+          <div class="invest-split-divider">+</div>
+          <div class="invest-split-item">
+            <span class="split-label">Na entrega</span>
+            <span class="split-value">R$&nbsp;600 <em>50%</em></span>
+          </div>
+        </div>
+        <span class="invest-pix">Pix ou transferência bancária</span>
       </div>
       <div class="invest-includes">
         <h4>Incluso no valor</h4>

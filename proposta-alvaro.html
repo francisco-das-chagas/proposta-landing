@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta – Álvaro Alfredo Advogados</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --dark:#080D1A;
+  --navy:#0C1A35;
+  --navy2:#142444;
+  --gold:#C4A35A;
+  --gold-l:#E2C07A;
+  --white:#FFFFFF;
+  --muted:#8899BB;
+  --border:rgba(196,163,90,0.25);
+}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",sans-serif;background:var(--dark);color:var(--white);overflow-x:hidden}
+
+/* HERO */
+.hero{min-height:100vh;background:var(--dark);display:flex;align-items:center;position:relative;overflow:hidden;padding:6rem 2rem 5rem}
+.hero::before{content:"";position:absolute;top:-200px;right:-200px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(196,163,90,0.07) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:1}
+
+.logo-wrap{margin-bottom:3rem;animation:fadeUp .6s ease both}
+.logo-wrap img{height:72px;width:auto;display:block}
+
+.tag{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);border:1px solid var(--border);padding:6px 16px;border-radius:99px;margin-bottom:2rem;animation:fadeUp .6s .05s ease both}
+.tag::before{content:"";width:6px;height:6px;background:var(--gold);border-radius:50%}
+
+.hero h1{font-family:"Playfair Display",serif;font-size:clamp(2.8rem,6.5vw,5rem);font-weight:700;line-height:1.05;letter-spacing:-.02em;animation:fadeUp .6s .1s ease both}
+.hero h1 em{font-style:italic;color:var(--gold)}
+
+.hero-sub{font-size:1.05rem;color:var(--muted);font-weight:300;line-height:1.7;max-width:520px;margin:1.5rem 0 2.5rem;animation:fadeUp .6s .2s ease both}
+
+.hero-meta{display:flex;align-items:center;gap:2rem;animation:fadeUp .6s .3s ease both}
+.hero-price{font-family:"Playfair Display",serif;font-size:2.8rem;font-weight:700;color:var(--gold);line-height:1}
+.hero-price span{font-size:1rem;color:var(--muted);font-family:"DM Sans",sans-serif;font-weight:300;display:block;margin-top:4px}
+.hero-divider{width:1px;height:60px;background:var(--border)}
+.hero-note{font-size:.85rem;color:var(--muted);line-height:1.6;font-weight:300}
+.hero-note strong{color:var(--white);font-weight:500;display:block}
+
+.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--muted);font-size:11px;letter-spacing:.1em;text-transform:uppercase;animation:fadeIn 1s 1s ease both}
+.scroll-hint::after{content:"";width:1px;height:40px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scrollLine 1.5s ease infinite}
+
+/* SECTIONS */
+section{padding:6rem 2rem}
+.container{max-width:900px;margin:0 auto}
+.section-label{font-size:11px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.section-title{font-family:"Playfair Display",serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;line-height:1.15;color:var(--white);margin-bottom:1rem}
+.section-body{font-size:1rem;color:var(--muted);line-height:1.8;max-width:560px;font-weight:300}
+
+/* CENÁRIO */
+.problema{background:var(--dark)}
+.problema-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:3rem}
+.prob-card{padding:1.8rem;border:1px solid rgba(255,255,255,0.06);border-radius:14px;background:var(--navy);transition:border-color .3s,transform .3s}
+.prob-card:hover{border-color:var(--border);transform:translateY(-3px)}
+.prob-icon{width:40px;height:40px;border-radius:10px;background:rgba(196,163,90,.1);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+.prob-icon svg{width:18px;height:18px;fill:var(--gold)}
+.prob-card h4{font-size:1rem;font-weight:500;margin-bottom:.5rem;color:var(--white)}
+.prob-card p{font-size:.875rem;color:var(--muted);line-height:1.65;font-weight:300}
+
+/* ENTREGA */
+.entrega{background:var(--navy)}
+.entrega-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem}
+.entrega-card{background:var(--dark);border:1px solid rgba(255,255,255,0.05);border-radius:14px;padding:1.6rem;transition:border-color .3s}
+.entrega-card:hover{border-color:var(--border)}
+.entrega-num{font-family:"Playfair Display",serif;font-size:2.5rem;color:rgba(196,163,90,.15);font-weight:700;line-height:1;margin-bottom:.75rem}
+.entrega-card h4{font-size:.95rem;font-weight:500;color:var(--white);margin-bottom:.4rem}
+.entrega-card p{font-size:.82rem;color:var(--muted);line-height:1.6;font-weight:300}
+
+/* CRONO */
+.crono{background:var(--dark)}
+.timeline{margin-top:3rem;display:flex;flex-direction:column;position:relative}
+.timeline::before{content:"";position:absolute;left:22px;top:0;bottom:0;width:1px;background:var(--border)}
+.tl-item{display:flex;gap:1.5rem;align-items:flex-start;padding:0 0 2.5rem}
+.tl-dot{width:44px;height:44px;border-radius:50%;background:var(--navy2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:"Playfair Display",serif;font-size:1rem;color:var(--gold);font-weight:700;flex-shrink:0;position:relative;z-index:1}
+.tl-day{font-size:.75rem;color:var(--gold);font-weight:500;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+.tl-title{font-size:1rem;font-weight:500;color:var(--white);margin-bottom:4px}
+.tl-desc{font-size:.875rem;color:var(--muted);line-height:1.6;font-weight:300}
+
+/* OAB */
+.oab{background:var(--navy)}
+.oab-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem}
+.oab-col h4{font-size:.8rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;margin-bottom:1.2rem}
+.oab-col.allowed h4{color:#4ADE80}
+.oab-col.blocked h4{color:#F87171}
+.oab-item{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:.875rem;color:var(--muted);font-weight:300;line-height:1.5}
+.oab-item:last-child{border-bottom:none}
+.oab-item .ico{flex-shrink:0;margin-top:2px;font-style:normal;font-weight:600}
+.allowed .ico{color:#4ADE80}
+.blocked .ico{color:#F87171}
+
+/* INVEST */
+.invest{background:var(--dark)}
+.invest-box{margin-top:3rem;background:var(--navy2);border:1px solid var(--border);border-radius:20px;padding:3rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;position:relative;overflow:hidden}
+.invest-box::before{content:"";position:absolute;top:-100px;right:-100px;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,rgba(196,163,90,.06),transparent 70%);pointer-events:none}
+.invest-price{font-family:"Playfair Display",serif;font-size:5rem;font-weight:700;color:var(--white);line-height:1}
+.invest-price sup{font-size:1.8rem;color:var(--gold);vertical-align:super}
+.invest-label{font-size:.85rem;color:var(--muted);font-weight:300;margin-top:.5rem}
+.invest-pix{display:inline-block;margin-top:1rem;font-size:.8rem;color:var(--gold);border:1px solid var(--border);padding:5px 14px;border-radius:99px}
+.invest-includes h4{font-size:.8rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
+.invest-note{font-size:.8rem;color:var(--muted);font-style:italic;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.06);font-weight:300;grid-column:1/-1;margin-top:.5rem}
+
+.check-list{list-style:none}
+.check-list li{display:flex;align-items:center;gap:10px;font-size:.9rem;color:var(--muted);padding:6px 0;font-weight:300}
+.check-list li::before{content:"✓";color:var(--gold);font-weight:600;font-size:.85rem;flex-shrink:0}
+
+/* CTA */
+.cta-section{background:var(--navy);text-align:center;padding:7rem 2rem}
+.cta-section .section-title{font-size:clamp(2rem,5vw,3.5rem);margin-bottom:1.5rem}
+.cta-section .section-body{margin:0 auto 2.5rem;text-align:center;max-width:480px}
+.cta-btn{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--dark);font-family:"DM Sans",sans-serif;font-size:.95rem;font-weight:500;padding:16px 36px;border-radius:99px;text-decoration:none;transition:background .2s,transform .2s}
+.cta-btn:hover{background:var(--gold-l);transform:translateY(-2px)}
+.cta-btn svg{width:18px;height:18px}
+
+/* FOOTER */
+footer{background:var(--dark);text-align:center;padding:2rem;font-size:.8rem;color:var(--muted);border-top:1px solid rgba(255,255,255,.04);font-weight:300}
+footer strong{color:var(--gold);font-weight:500}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes scrollLine{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:none}
+
+@media(max-width:680px){
+  .problema-grid,.entrega-grid,.oab-grid,.invest-box{grid-template-columns:1fr}
+  .entrega-grid{grid-template-columns:1fr 1fr}
+  .invest-price{font-size:3.5rem}
+}
+@media(max-width:420px){.entrega-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="logo-wrap">
+      <img src="logo.png" alt="Álvaro Alfredo Advogados">
+    </div>
+    <div class="tag">Proposta Comercial</div>
+    <h1>Um site à altura<br>do seu <em>escritório.</em></h1>
+    <p class="hero-sub">Landing page profissional com a identidade visual do Álvaro Alfredo Advogados — para ser encontrado, gerar confiança e converter visitantes em clientes.</p>
+    <div class="hero-meta">
+      <div class="hero-price">R$&nbsp;1.200<span>pagamento único</span></div>
+      <div class="hero-divider"></div>
+      <div class="hero-note"><strong>Entrega em 5 dias</strong>Pix, transferência ou parcelado</div>
+    </div>
+  </div>
+  <div class="scroll-hint">ver proposta</div>
+</section>
+
+<!-- CENÁRIO -->
+<section class="problema">
+  <div class="container">
+    <p class="section-label reveal">O cenário atual</p>
+    <h2 class="section-title reveal">O que está custando<br>clientes ao seu escritório hoje.</h2>
+    <div class="problema-grid">
+      <div class="prob-card reveal">
+        <div class="prob-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div>
+        <h4>Ausência no Google</h4>
+        <p>Clientes buscam advogados em Sobral e não encontram nenhuma página que transmita a autoridade do seu escritório.</p>
+      </div>
+      <div class="prob-card reveal">
+        <div class="prob-icon"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg></div>
+        <h4>Tudo no WhatsApp</h4>
+        <p>Sem uma página centralizada, você responde manualmente as mesmas perguntas que um site resolveria de forma automática.</p>
+      </div>
+      <div class="prob-card reveal">
+        <div class="prob-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+        <h4>Autoridade invisível</h4>
+        <p>Sua formação, experiência e especialidades ficam escondidas. O site comunica isso com elegância antes mesmo do primeiro contato.</p>
+      </div>
+      <div class="prob-card reveal">
+        <div class="prob-icon"><svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg></div>
+        <h4>Oportunidades perdidas</h4>
+        <p>Potenciais clientes desistem ao não encontrar informações rápidas. Cada dia sem presença online é uma causa que foi para o concorrente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENTREGÁVEIS -->
+<section class="entrega">
+  <div class="container">
+    <p class="section-label reveal">O que você recebe</p>
+    <h2 class="section-title reveal">Seis seções que constroem<br>confiança do topo ao fim.</h2>
+    <div class="entrega-grid">
+      <div class="entrega-card reveal"><div class="entrega-num">01</div><h4>Hero com animação de logo</h4><p>Primeira impressão impactante com animação de entrada, nome do escritório, especialidade e botão direto para o WhatsApp.</p></div>
+      <div class="entrega-card reveal"><div class="entrega-num">02</div><h4>Seção Sobre</h4><p>Foto profissional, bio, número da OAB e formação acadêmica apresentados com elegância e autoridade.</p></div>
+      <div class="entrega-card reveal"><div class="entrega-num">03</div><h4>Áreas de atuação</h4><p>Cards visuais com ícone para cada especialidade — direto e claro para o visitante identificar sua área.</p></div>
+      <div class="entrega-card reveal"><div class="entrega-num">04</div><h4>Diferenciais</h4><p>Pilares do escritório: atendimento humanizado, localização, experiência e disponibilidade.</p></div>
+      <div class="entrega-card reveal"><div class="entrega-num">05</div><h4>Contato centralizado</h4><p>WhatsApp, Instagram, e-mail e endereço reunidos em uma seção limpa, sem ruído.</p></div>
+      <div class="entrega-card reveal"><div class="entrega-num">06</div><h4>Botão flutuante</h4><p>Atalho para WhatsApp fixo em toda a página — o visitante entra em contato a qualquer momento.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CRONOGRAMA -->
+<section class="crono">
+  <div class="container">
+    <p class="section-label reveal">Prazo de entrega</p>
+    <h2 class="section-title reveal">Do briefing ao ar<br>em 5 dias úteis.</h2>
+    <div class="timeline">
+      <div class="tl-item reveal"><div class="tl-dot">1</div><div class="tl-content"><p class="tl-day">Dia 1</p><p class="tl-title">Briefing e identidade visual</p><p class="tl-desc">Recebo logotipo, paleta de cores, foto profissional e informações do escritório. Definimos a estrutura juntos.</p></div></div>
+      <div class="tl-item reveal"><div class="tl-dot">2</div><div class="tl-content"><p class="tl-day">Dias 2–3</p><p class="tl-title">Desenvolvimento</p><p class="tl-desc">Construção completa da página com animações, responsividade e todo o conteúdo aplicado.</p></div></div>
+      <div class="tl-item reveal"><div class="tl-dot">3</div><div class="tl-content"><p class="tl-day">Dia 4</p><p class="tl-title">Revisão com você</p><p class="tl-desc">Apresento a versão e aplico os ajustes solicitados. Duas rodadas incluídas no valor.</p></div></div>
+      <div class="tl-item reveal"><div class="tl-dot">4</div><div class="tl-content"><p class="tl-day">Dia 5</p><p class="tl-title">Entrega e publicação</p><p class="tl-desc">Site publicado com domínio próprio e orientações completas de uso.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- OAB -->
+<section class="oab">
+  <div class="container">
+    <p class="section-label reveal">Conformidade</p>
+    <h2 class="section-title reveal">Dentro das normas<br>da OAB. Sempre.</h2>
+    <p class="section-body reveal">Desenvolvemos sites que respeitam integralmente o Código de Ética e as normas de publicidade da OAB.</p>
+    <div class="oab-grid">
+      <div class="oab-col allowed reveal">
+        <h4>O que fazemos</h4>
+        <div class="oab-item"><i class="ico">&#10003;</i> Nome, foto e número da OAB em destaque</div>
+        <div class="oab-item"><i class="ico">&#10003;</i> Áreas de atuação listadas com clareza</div>
+        <div class="oab-item"><i class="ico">&#10003;</i> Formação acadêmica e especializações</div>
+        <div class="oab-item"><i class="ico">&#10003;</i> Botão de contato via WhatsApp e Instagram</div>
+        <div class="oab-item"><i class="ico">&#10003;</i> Endereço e localização do escritório</div>
+        <div class="oab-item"><i class="ico">&#10003;</i> Conteúdo informativo sobre direito</div>
+      </div>
+      <div class="oab-col blocked reveal">
+        <h4>O que evitamos</h4>
+        <div class="oab-item"><i class="ico">&#10005;</i> Expressões como "o melhor advogado"</div>
+        <div class="oab-item"><i class="ico">&#10005;</i> Exibição de valores de honorários</div>
+        <div class="oab-item"><i class="ico">&#10005;</i> Promessas de resultado em causas</div>
+        <div class="oab-item"><i class="ico">&#10005;</i> Publicidade mercantil ou sensacionalista</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTIMENTO -->
+<section class="invest">
+  <div class="container">
+    <p class="section-label reveal">Investimento</p>
+    <h2 class="section-title reveal">Tudo isso por um<br>valor único.</h2>
+    <div class="invest-box reveal">
+      <div>
+        <div class="invest-price"><sup>R$</sup>1.200</div>
+        <p class="invest-label">pagamento único · sem mensalidade</p>
+        <span class="invest-pix">Pix, transferência ou parcelado</span>
+      </div>
+      <div class="invest-includes">
+        <h4>Incluso no valor</h4>
+        <ul class="check-list">
+          <li>Desenvolvimento do zero</li>
+          <li>Aplicação da identidade visual</li>
+          <li>Animações e scroll reveal</li>
+          <li>100% responsivo — mobile first</li>
+          <li>SEO básico configurado</li>
+          <li>2 rodadas de ajustes</li>
+          <li>Orientação para domínio e hospedagem</li>
+        </ul>
+      </div>
+      <p class="invest-note">Domínio e hospedagem não estão inclusos — custo aproximado de R$3/mês + R$40/ano, pago diretamente pelo cliente.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Proposta válida por 15 dias &nbsp;·&nbsp; <strong>Álvaro Alfredo Advogados</strong> &nbsp;·&nbsp; Sobral, CE
+</footer>
+
+<script>
+const reveals=document.querySelectorAll(".reveal");
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){setTimeout(()=>e.target.classList.add("visible"),i*60);obs.unobserve(e.target)}
+  });
+},{threshold:.12});
+reveals.forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
